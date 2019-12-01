@@ -1,0 +1,32 @@
+{% extends 'hotel/base.html' %} {% block content %}
+
+<div class="row mt-2">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Listado Registros
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">FECHA</th>
+                            <th scope="col">TITULO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for hotel in hoteles%}
+                        <tr>
+                            <td>{{hotel.published_date}}</td>
+                            <td>{{hotel.title}} </td>
+                        </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

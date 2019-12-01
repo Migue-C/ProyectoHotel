@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Hoteles</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1><a href="/">Hoteles</a></h1>
+                    </div>
+                    <nav>
+                        <ul class="menu">
+                            <li> <a href="{% url 'Inicio' %}"> Inicio</a></li>
+                            <li> <a href="{% url 'hotel_list' %}"> Buscar Hotel</a></li>
+                            <li> <a href="{% url 'Acercade' %}">Acerca de</a></li>
+                            <li> <a href="{% url 'Contacto' %}"> Contacto</a></li>
+                            <li> <a href="{% url 'AgregarHotel' %}"> Agregar Hotel</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+
+    <p> Miguel Campusano - Pagina de hoteles - 2019</p>
+
+</footer>
+
+</html>

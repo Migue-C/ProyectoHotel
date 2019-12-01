@@ -1,0 +1,61 @@
+/*Esta parte pertenece al titulo y el menu que esta en base*/
+
+h1 a {
+    color: #FCA205;
+}
+
+p {
+    color: #000000;
+}
+
+body {
+    background-image: url(https://www.solofondos.com/wp-content/uploads/2015/11/Fondos-para-paginas-web-grandes.jpg);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+
+header {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+footer {
+    margin: 16px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #000000;
+    background: rgba(158, 240, 255, 0.4);
+}
+
+.info {
+    color: #000000;
+    background-color: rgba(118, 229, 248, 0.4);
+    border: thick solid rgb(161, 228, 255);
+    overflow: hidden;
+    height: 1%;
+}
+
+.menu {
+    font-size: 20px;
+    width: 100%;
+    background: rgba(158, 240, 255, 0.4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    padding: 10px 20px;
+    display: inline-block;
+    color: #000000;
+}
+
+.menu li a:hover {
+    background: #042f4d;
+}
