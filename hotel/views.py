@@ -50,12 +50,35 @@ from django.contrib.auth import login as do_login
 def welcome(request):
     # Si estamos identificados devolvemos la portada
     if request.user.is_authenticated:
-        return render(request, "users/welcome.html")
+        return render(request, "hotel/welcome.html")
     # En otro caso redireccionamos al login
     return redirect('/login')
 
+from django.contrib.auth.forms import UserCreationForm
+
+# ...
+
 def register(request):
-    return render(request, "users/register.html")
+    # Creamos el formulario de autenticación vacío
+    form = UserCreationForm()
+    if request.method == "POST":
+        # Añadimos los datos recibidos al formulario
+        form = UserCreationForm(data=request.POST)
+        # Si el formulario es válido...
+        if form.is_valid():
+
+            # Creamos la nueva cuenta de usuario
+            user = form.save()
+
+            # Si el usuario se crea correctamente 
+            if user is not None:
+                # Hacemos el login manualmente
+                do_login(request, user)
+                # Y le redireccionamos a la portada
+                return redirect('/')
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "hotel/register.html", {'form': form})
 
 def login(request):
     # Creamos el formulario de autenticación vacío
