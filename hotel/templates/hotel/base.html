@@ -1,10 +1,10 @@
-{% load staticfiles %}
+{% load static %}
 <html>
 
 <head>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'hotel/css/style.css' %}">
     <title>Hoteles</title>
 </head>
 
@@ -18,25 +18,45 @@
                     </div>
                     <nav>
                         <ul class="menu">
-                            <li> <a href="{% url 'Inicio' %}"> Inicio</a></li>
-                            <li> <a href="{% url 'hotel_list' %}"> Buscar Hotel</a></li>
-                            <li> <a href="{% url 'Acercade' %}">Acerca de</a></li>
-                            <li> <a href="{% url 'Contacto' %}"> Contacto</a></li>
-                            <li> <a href="{% url 'AgregarHotel' %}"> Agregar Hotel</a></li>
-                        </ul>
+                            <li>
+                                <a href="{% url 'Inicio' %}"> Inicio</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'hotel_list' %}"> Buscar Hotel</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'Acercade' %}">Acerca de</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'Contacto' %}"> Contacto</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'AgregarHotel' %}"> Agregar Hotel</a>
+                            </li>
+
+                            {% if user.is_authenticated%}
+                            <li>
+                                <a href="#">Usuario: {{ user.username }}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'logout' %"> Cerrar Sesion </a>
+                            </li>
+                            {% endif %}
+
+                        </ul>                    
                     </nav>
                 </div>
             </div>
         </div>
-
     </header>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-12">
-                {% block content %} {% endblock %}
-            </div>
-        </div>
-    </div>
+    <div class=" content container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            {% block content %} {% endblock %}
+                                        </div>
+                                    </div>
+                </div>
 </body>
 
 <footer>
