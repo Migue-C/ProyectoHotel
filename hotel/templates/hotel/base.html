@@ -33,30 +33,43 @@
                             <li>
                                 <a href="{% url 'AgregarHotel' %}"> Agregar Hotel</a>
                             </li>
+                            <li>
+                                <a href="{% url 'ModificarHotel' %}"> Modificar Hotel</a>
+                            </li>
 
-                            {% if user.is_authenticated%}
+                            {% if user.is_authenticated %}
                             <li>
                                 <a href="#">Usuario: {{ user.username }}</a>
                             </li>
                             <li>
-                                <a href="{% url 'logout' %"> Cerrar Sesion </a>
+                                <a href="{% url 'logout' %}">Cerrar Sesión</a>
+                            </li>
+                            {% else %}
+
+                            <li>
+                                <a href="{% url 'login' %}">Inicio Sesión</a>
                             </li>
                             {% endif %}
 
-                        </ul>                    
+                        </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
     <div class=" content container">
-                                    <div class="row">
-                                        <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
 
-                                            {% block content %} {% endblock %}
-                                        </div>
-                                    </div>
-                </div>
+                {% block content %}
+                
+                
+                
+                
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
 
 <footer>

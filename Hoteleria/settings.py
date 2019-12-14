@@ -29,7 +29,9 @@ ALLOWED_HOSTS = []
 
 
 LOGIN_REDIRECT_URL = '/'
+
 LOGOUT_REDIRECT_URL = '/' 
+
 
 
 
@@ -42,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hotel.apps.HotelConfig',   
+    'hotel.apps.HotelConfig',  
+    
 ]
 
 
@@ -128,4 +131,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+MEDIA_ROOT = 'media/'
+
+MEDIA_URL = 'http://localhost:8000/media/'
+
+
 

@@ -1,12 +1,15 @@
-{% extends 'hotel/base.html' %}{% load static %}
+{% extends 'hotel/base.html' %}
 
+{% load static %}
 
 {% block content %}
+
 <div class="slider">
     <ul>
-        <li><img src="{ % static 'img/hotel-del-mar-enjoy-vina.jpg'  %   }" alt="hotel-del-mar-enjoy-vina"></li>
-        <li><img src="{ % static 'img/Hotel-Sheraton.jpg '  %   }" alt="Hotel-Sheraton "></li>
-        <li><img src="{ % static 'img/Hotel-O'Higgins.jpg '  %   }" alt="Hotel-O Higgins"></li>
+        <li><img src="{% static 'hotel/img/HotelDelMarEnjoyVina.jpg' %}" class="img-responsive" alt="hotel-del-mar-enjoy-vina"></li>
+        <li><img src="{% static 'hotel/img/HotelSheraton.jpg' %}" class="img-responsive" alt="hotel-del-mar-enjoy-vina"></li>
+        <li><img src="{% static 'hotel/img/HotelOhiggins.jpg' %}" class="img-responsive" alt="hotel-del-mar-enjoy-vina"></li>
+       
     </ul>
 </div>
 {% endblock %}

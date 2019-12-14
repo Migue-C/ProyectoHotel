@@ -27,8 +27,26 @@ footer {
     color: #000000;
     background: rgba(158, 240, 255, 0.4);
 }
-
-.info {
+.listaH
+{
+    background-color: #ffffff;
+}
+.contenedor{
+    color:rgb(0, 0, 0);
+    display:block;
+    height:717.734px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-top:0px;
+    padding-bottom:0px;
+    padding-left:0px;
+    padding-right:0px;
+    padding-top:0px;
+    width:759.594px;
+    
+}
+.info{
     color: #000000;
     background-color: rgba(118, 229, 248, 0.4);
     border: thick solid rgb(161, 228, 255);
@@ -59,3 +77,53 @@ footer {
 .menu li a:hover {
     background: #042f4d;
 }
+
+.slider {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 300%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;
+}
+
+
+
+
+
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+}
+
+
+

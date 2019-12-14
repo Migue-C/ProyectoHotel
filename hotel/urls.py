@@ -10,6 +10,7 @@ urlpatterns = [
     path('hotel/contacto', views.contacto, name='Contacto'),
     path('hotel/inicio', views.inicio, name='Inicio'),
     path('hotel/agregar_hotel', views.AgregarHotel, name='AgregarHotel'),   
-    path('admin/', admin.site.urls),  
+    path('hotel/modificar_hotel',views.ModificarHotel, name='ModificarHotel'),
+    path('admin/', admin.site.urls), 
 
 ]
