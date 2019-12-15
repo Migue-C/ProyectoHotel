@@ -9,7 +9,8 @@
 
     <table class="table">
         <tr>
-            <th>Nombre Hoteles</th>
+            <th>Nombre Hoteles</th>      
+            <th>Imagen</th>
             <th>Descripción</th>
             <th>Opciones</th>
         </tr>
@@ -18,11 +19,17 @@
 
         <tr>
             <td>{{h.title}}</td>
+            <td>
+                {% if h.imagen %}
+                <img src="{{ h.imagen.url }}" width="280" height="200">
+                {% endif %}
+                </td>
             <td>{{h.text}}</td>
+           
             <td>
                 <a href="{% url 'ModificarHotel' %}">Modificar</a>
             </td>
-            
+
         </tr>
 
         {% endfor%}

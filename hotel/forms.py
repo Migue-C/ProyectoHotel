@@ -5,4 +5,4 @@ from .models import Hotel
 class PostForm(forms.ModelForm):
     class Meta:
         model = Hotel
-        fields = ('title', 'text', 'author', 'published_date')
+        fields = ('title', 'text', 'author', 'imagen' ,'published_date')

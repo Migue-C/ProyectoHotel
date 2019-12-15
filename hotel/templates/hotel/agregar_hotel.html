@@ -5,10 +5,12 @@
 
 <h2> Agregar Hotel</h2>
 
-<form action="" method="POST">
+<form action="" method="POST"  enctype="multipart/form-data">
     {% csrf_token %}
     <table class="table">
-        {{ form}}
+
+        {{ form}}   
+           
     </table>
 
     <input type="reset" value="Limpiar">

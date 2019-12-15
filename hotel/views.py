@@ -52,7 +52,7 @@ def ModificarHotel(request):
         'form' : PostForm()
     }
     if request.method == 'POST':
-        formulario= PostForm(data=request.POST, instance=hoteles)
+        formulario= PostForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
             data ['mensaje'] = "El Hotel Fue Modificado Correctamente"
