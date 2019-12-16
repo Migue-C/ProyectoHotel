@@ -27,7 +27,9 @@
             <td>{{h.text}}</td>
            
             <td>
+                {% if h.id %}
                 <a href="{% url 'ModificarHotel' %}">Modificar</a>
+                {% endif %}
             </td>
 
         </tr>

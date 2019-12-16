@@ -32,8 +32,7 @@ def inicio(request):
 def AgregarHotel(request):
     data = {
         'form':PostForm()
-    }
-    
+    }   
     if request.method == 'POST':
         formulario= PostForm(request.POST)
         if formulario.is_valid():
@@ -60,6 +59,21 @@ def ModificarHotel(request):
 
 
     return render(request, "hotel/modificar_hotel.html", data)
+
+
+def EliminarHotel(request):
+    data = {
+        'form' : PostForm()
+    }
+    if request.method == 'POST':
+        formulario= PostForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data ['mensaje'] = "El Hotel Fue Eliminado Correctamente"
+            data['form'] = formulario
+
+
+    return render(request, "hotel/eliminar_hotel.html", data)
 
 
 
