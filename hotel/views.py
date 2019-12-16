@@ -59,8 +59,9 @@ def ModificarHotel(request):
 
 
     return render(request, "hotel/modificar_hotel.html", data)
+    
 
-
+@permission_required('hotel.changehotel')
 def EliminarHotel(request):
     data = {
         'form' : PostForm()
